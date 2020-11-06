@@ -15,5 +15,6 @@ function submitInfo() {
     let jobName = $('#jobTitle').text();
     let annualSal = $('#annualSalary').val();
 
-    $('.listOfEmployees').append(`<li></li>`)
+    $('.listOfEmployees').append(`<thead><tr><th>${firstName}</th><th>${lastName}</th><th>${idNumber}</th><th>${jobName}</th><th>${annualSal}</th></thead>`);
+    console.log('Employee Data Entered');
 }
