@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jquery-3.5.1.min.js"></script>
     <script src="client.js"></script>
+    <link rel="stylesheet" href="style.css"/>
     <title>jQuery Salary Calculator</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Salary Calculator</h1>
+        <h2>Monthly Costs: <span id="monthlyCosts"></span></h2>
+    </header>
+    <form>
+        <input type="text" placeholder="First Name" class ="input" id="employeeFirstName"/>
+        <input type="text" placeholder="Last Name" class="input" id="employeeLastName"/>
+        <input type="number" placeholder="ID Number" class="input" id="employeeIDNumber"/>
+        <input type="text" placeholder="Job Title" class="input" id="jobTitle"/>
+        <input type="number" placeholder="Annual Salary" class="input" id="annualSalary"/>
+            <button id="subtmitButton">Submit</button>
+    </form>
+    <section>
+        <ul class="listOfEmployees"></ul>
+    </section>
 </body>
 </html>
