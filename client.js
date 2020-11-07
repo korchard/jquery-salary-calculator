@@ -46,7 +46,7 @@ function calculateTotalCost() {
     $('#monthlyCosts').text(`${totalCost}`);
 
     if (totalCost > 20000) {
-        $('.turnRed').addClass()
+        $('.turnRed').addClass('red');
     }
 } // end calculateTotalCost function 
 
