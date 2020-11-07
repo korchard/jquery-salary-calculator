@@ -1,3 +1,52 @@
 .red {
     background-color: rgb(179, 14, 14);
 }
+
+body {
+    border-style: solid;
+    border-width: 3px;
+}
+
+header {
+    padding: 10px;
+    border-bottom: solid black;
+    background-color: #cdcdcd;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.infoBox {
+    padding-top: 10px;
+    padding-left: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section {
+    padding: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tableHead {
+    font-weight: bold;
+}
+
+.listOfEmployees {
+    border-style: solid;
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+}
+
+.row {
+    border-style: solid;
+}
+
+.column {
+    border-style: solid;
+}
+
+.h2 {
+    
+}
+

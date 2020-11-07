@@ -11,9 +11,9 @@
 <body class="turnRed">
     <header>
         <h1>Salary Calculator</h1>
-        <h2>Monthly Costs: <span id="monthlyCosts"></span></h2>
     </header>
-    <form>
+    <form class="infoBox">
+        <p>Add Employee:</p>
         <input type="text" placeholder="First Name" class ="input" id="employeeFirstName"/>
         <input type="text" placeholder="Last Name" class="input" id="employeeLastName"/>
         <input type="number" placeholder="ID Number" class="input" id="employeeIDNumber"/>
@@ -24,17 +24,21 @@
     <section>
         <h2>Employee Data</h2>
         <table class="listOfEmployees">
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>ID Number</th>
-                    <th>Job Title</th>
-                    <th>Annual Salary</th>
-                    <th></th>
+            <thead class="tableHead">
+                <tr class="row">
+                    <th class="column">First Name</th>
+                    <th class="column">Last Name</th>
+                    <th class="column">ID Number</th>
+                    <th class="column">Job Title</th>
+                    <th class="column">Annual Salary</th>
+                    <th class="column"></th>
                 </tr>
             </thead>
+            <tbody class="displayEmployees">
+                <!--jQuery will input here-->
+            </tbody>
         </table>
+        <h2>Monthly Costs: <span id="monthlyCosts"></span></h2>
     </section>
 </body>
 </html>
