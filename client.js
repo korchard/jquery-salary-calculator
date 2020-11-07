@@ -9,8 +9,7 @@ function onReady() {
 }
 
 function submitInfo(event) {
-
-  event.preventDefault();
+  event.preventDefault(); // makes event handler not auto refresh
 
   let employee = {
         firstName: $('#employeeFirstName').val(),
@@ -20,8 +19,18 @@ function submitInfo(event) {
         annualSal: $('#annualSalary').val(),
     };
     
-    $('.listOfEmployees').append(`<thead><tr><th>${employee.firstName}</th><th>${employee.lastName}</th><th>${employee.idNumber}</th><th>${employee.jobName}</th><th>${employee.annualSal}</th></thead>`);
-    console.log('Employee Data Entered');
+    let employeeList = $('.listOfEmployees');
+    // append the employee content to the table on the DOM
+    employeeList.append(`<thead><tr><th>${employee.firstName}</th><th>${employee.lastName}</th><th>${employee.idNumber}</th><th>${employee.jobName}</th><th>${employee.annualSal}</th></thead>`);
+    console.log('Employee Data Entered'); // to ensure function is working
 
-    
-}
+    emptyList(); // empty the input bars   
+} // end submitInfo function 
+
+function emptyList() {
+    $('#employeeFirstName').val('');
+    $('#employeeLastName').val('');
+    $('#employeeIDNumber').val('');
+    $('#jobTitle').val('');
+    $('#annualSalary').val('');
+} // end emptyList function
