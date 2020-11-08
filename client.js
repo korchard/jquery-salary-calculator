@@ -51,8 +51,8 @@ function emptyList() { // emptys the input fields
 
 function calculateTotalCost(employee) {
     totalCost += Number(employee.annualSal / 12); 
-
-    $('#monthlyCosts').text(`${totalCost}`);
+    //totalCost.toFixed(2); // adjusts the totalCost to display only two digits after decimal
+    $('#monthlyCosts').text(`${Math.round(totalCost)}`);
     // conditional to have a display change when maxMonthly is reached - background change
     if (totalCost > maxMonthly) { 
         $('.turnRed').addClass('red');
@@ -69,5 +69,6 @@ function removeEmployee() {
     let monthlyCost = (deletedSalary / 12); // takes the annual salary and converts it to monthly cost
     
     totalCost -= monthlyCost; // removes the deleted salary from the totalCost
-    $('#monthlyCosts').text(`${totalCost}`); // displays the adjusted monthly cost on the DOM
+    //totalCost.toPrecision(5); // adjusts the totalCost to display only two digits after decimal
+    $('#monthlyCosts').text(`${Math.round(totalCost)}`); // displays the adjusted monthly cost on the DOM
 } // end removeEmployee function

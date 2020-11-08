@@ -11,7 +11,7 @@ jQuery Salary Calculator
 
 ## Description
 
-_Duration: Approximately 10 hours
+_Duration: Approximately 12 hours
 
 Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
 
@@ -56,11 +56,6 @@ How does someone use this application? Tell a user story here.
 ## Built With
 
 List technologies and frameworks here
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-_Note, include this only if you have a license file. GitHub will generate one for you if you want!_
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
