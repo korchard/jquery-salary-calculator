@@ -8,6 +8,7 @@ function onReady() {
     console.log('in jQuery'); // ensure jQuery is working
     $('#submitButton').on('click', submitInfo); // event handler to add info to DOM
     $('.listOfEmployees').on('click', '#deleteInfo', removeEmployee);
+    $('#monthlyCosts').text(`${0}`)
 }
 
 function submitInfo(event) {
@@ -18,7 +19,7 @@ function submitInfo(event) {
         lastName: $('#employeeLastName').val(),
         idNumber: $('#employeeIDNumber').val(),
         jobName: $('#jobTitle').val(),
-        annualSal: $('#annualSalary').val(),
+        annualSal: $('#annualSalary').val()
     };
 
     //let employeeList = $('.listOfEmployees');
@@ -71,7 +72,7 @@ function display() {
             <th class="column">${employeeArray[i].lastName}</th>
             <th class="column">${employeeArray[i].idNumber}</th>
             <th class="column">${employeeArray[i].jobName}</th>
-            <th class="column" class="money">${employeeArray[i].annualSal}</th>
+            <th class="column" class="money">$${employeeArray[i].annualSal}</th>
             <th class="column"><button onclick=removeEmployee(${i}) class="remove">Remove</button></th></tr>`);
         } // end for loop - which appends the employee info to the table on the DOM
         calculateTotalCost();
@@ -81,5 +82,5 @@ function removeEmployee(idx) {
     $(this).remove();
     employeeArray.splice(idx, 1);
     display();
-    console.log(employeeArray);
+    calculateTotalCost();
 } // end removeEmployee function
