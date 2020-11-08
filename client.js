@@ -2,13 +2,14 @@ console.log('in javaScript'); // ensure javaScript is working
 
 $(document).ready(onReady);
 
-let employeeArray = [];
+let totalCost = 0; // declared total cost of 0 initially
+let maxMonthly = 20000; // declared a variable for monthly max so this could be adjusted at a later date
 
 function onReady() {
     console.log('in jQuery'); // ensure jQuery is working
     $('#submitButton').on('click', submitInfo); // event handler to add info to DOM
-    $('.listOfEmployees').on('click', '#deleteInfo', removeEmployee);
-    $('#monthlyCosts').text(`${0}`)
+    $('.listOfEmployees').on('click', '.remove', removeEmployee); // removes the specidic employee from the list
+    $('#monthlyCosts').text(`${0}`) // added this so that $0 shows up on the page refresh
 }
 
 function submitInfo(event) {
@@ -21,29 +22,26 @@ function submitInfo(event) {
         jobName: $('#jobTitle').val(),
         annualSal: $('#annualSalary').val()
     };
-
-    //let employeeList = $('.listOfEmployees');
-    // append the employee content to the table on the DOM
-
+    // conditional to prevent you from adding an employee to the DOM without inputting all of the information
     if (!employee.firstName|| !employee.lastName|| !employee.idNumber || !employee.jobName || !employee.annualSal) { 
         console.log('Please fill out all information');
       } else {
-        /*employeeList.append(`<tr class="row" id="deleteInfo"><th class="column">${employee.firstName}</th>
+        // append the employee content to the table on the DOM
+        $('.listOfEmployees').append(`<tr class="row" id="deleteInfo">
+            <th class="column">${employee.firstName}</th>
             <th class="column">${employee.lastName}</th>
             <th class="column">${employee.idNumber}</th>
             <th class="column">${employee.jobName}</th>
-            <th class="column" class="money">${employee.annualSal}</th>
-            <th class="column"><button class="remove">Remove</button></th></tr>`);*/
+            <th class="column money">${employee.annualSal}</th>
+            <th class="column"><button class="remove">Remove</button></th>
+            </tr>`);
         console.log('Employee Data Entered'); // to ensure function is working
-        employeeArray.push(employee); // push annual salary into empty salary array
-        display(); //inputs the appended employee to the DOM
-      }
+      } // end conditional 
     emptyList(); // empty the input bars   
-    //calculateTotalCost(); // call totalCost to add new employee salary to monthly cost
-    
+    calculateTotalCost(employee); // call totalCost to add new employee salary to monthly cost
 } // end submitInfo function 
 
-function emptyList() {
+function emptyList() { // emptys the input fields
     $('#employeeFirstName').val('');
     $('#employeeLastName').val('');
     $('#employeeIDNumber').val('');
@@ -51,39 +49,25 @@ function emptyList() {
     $('#annualSalary').val('');
 } // end emptyList function
 
-function calculateTotalCost() {
-    let totalCost = 0; // declared total cost of 0 initially
-    for (let i = 0; i < employeeArray.length; i++) {
-        totalCost += Number(employeeArray[i].annualSal); //iterates through the employee array to add the total cost
-    } // end for loop
+function calculateTotalCost(employee) {
+    totalCost += Number(employee.annualSal / 12); 
 
-    totalCost /= 12; // adjusts the annual salary to monthly 
-    totalCost = totalCost.toFixed(2); // adjusts the totalCost to have 2 digits after the decimal
     $('#monthlyCosts').text(`${totalCost}`);
-
-    if (totalCost > 20000) {
+    // conditional to have a display change when maxMonthly is reached - background change
+    if (totalCost > maxMonthly) { 
         $('.turnRed').addClass('red');
-    }
+    } // end conditional
 } // end calculateTotalCost function 
 
-function display() {
-    console.log(employeeArray);
-    let employeeList = $('.displayEmployees');
-    employeeList.empty(); 
-    for (let i = 0; i < employeeArray.length; i++) {
-        employeeList.append(`<tr class="row" id="deleteInfo"><th class="column">${employeeArray[i].firstName}</th>
-            <th class="column">${employeeArray[i].lastName}</th>
-            <th class="column">${employeeArray[i].idNumber}</th>
-            <th class="column">${employeeArray[i].jobName}</th>
-            <th class="column" class="money">$${employeeArray[i].annualSal}</th>
-            <th class="column"><button onclick=removeEmployee(${i}) class="remove">Remove</button></th></tr>`);
-        } // end for loop - which appends the employee info to the table on the DOM
-        calculateTotalCost();
-} // end display function
+function removeEmployee() {
+    $(this).parents('#deleteInfo').remove(); // targets the employee row to be deleted
 
-function removeEmployee(idx) {
-    $(this).remove();
-    employeeArray.splice(idx, 1);
-    display();
-    //calculateTotalCost();
+    let targetRow = $(this).parents('#deleteInfo'); // created a variable to then retrieve annual salary from deleted employee
+
+    let deletedSalary = targetRow.children('.money').text(); // created a variable and pulls the annual salary from the deleted employee
+
+    let monthlyCost = (deletedSalary / 12); // takes the annual salary and converts it to monthly cost
+    
+    totalCost -= monthlyCost; // removes the deleted salary from the totalCost
+    $('#monthlyCosts').text(`${totalCost}`); // displays the adjusted monthly cost on the DOM
 } // end removeEmployee function
