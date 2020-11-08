@@ -15,7 +15,13 @@ _Duration: Approximately 10 hours
 
 Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
 
-This is an application that takes the input of an employee's name, occupation title, employee identifier, and annual salary and inputs it into a table that calculates the company's total monthly costs. 
+The application has an input form that collects _employee first name, last name, ID number, job title, annual salary_.
+
+A 'Submit' button collects the form information, stores the information to calculate monthly costs, appends information to the DOM and clears the input fields. Using the stored information, monthly costs are calculated and appended to the to DOM. If the total monthly cost exceeds $20,000, a red background will appear indicating the monthly costs have exceeded the desired amount.
+
+There is a 'Remove' button that deletes an employee from the list of employees and adjusts the total monthly costs to reflect the changes. 
+
+This is an application that takes the input of an employee's name, occupation title, employee identifier, and annual salary and inputs it into a table that calculates the company's total monthly costs. It allows the user to remove people from the list of employees with a button and adjusts the monthly total cost to reflect the changes. 
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
