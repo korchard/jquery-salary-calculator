@@ -11,7 +11,6 @@ body {
     background-image: url(https://cdn.pixabay.com/photo/2017/03/25/17/55/color-2174045__480.png);
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
 header {
@@ -50,11 +49,6 @@ p {
     padding: 5px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 10em;
-}
-
-#submitButton: visited {
-    background-color: white;
-    color: black;
 }
 
 h2 {
