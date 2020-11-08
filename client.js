@@ -56,6 +56,9 @@ function calculateTotalCost() {
     for (let i = 0; i < employeeArray.length; i++) {
         totalCost += Number(employeeArray[i].annualSal); //iterates through the employee array to add the total cost
     } // end for loop
+
+    totalCost /= 12; // adjusts the annual salary to monthly 
+    totalCost = totalCost.toFixed(2); // adjusts the totalCost to have 2 digits after the decimal
     $('#monthlyCosts').text(`${totalCost}`);
 
     if (totalCost > 20000) {
@@ -82,5 +85,5 @@ function removeEmployee(idx) {
     $(this).remove();
     employeeArray.splice(idx, 1);
     display();
-    calculateTotalCost();
+    //calculateTotalCost();
 } // end removeEmployee function
