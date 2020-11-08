@@ -1,5 +1,7 @@
+
 .red {
     background-image: url(https://cdn.pixabay.com/photo/2017/09/07/10/09/triangle-2724449_1280.png);
+    transition: background 1s linear;
 }
 
 body {
@@ -9,6 +11,7 @@ body {
     background-image: url(https://cdn.pixabay.com/photo/2017/03/25/17/55/color-2174045__480.png);
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 header {
@@ -95,6 +98,7 @@ section {
 
 #costs {
     text-align: right;
+    padding-right: 5em;
 }
 
 .remove {
@@ -103,4 +107,11 @@ section {
     padding: 3px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 6em;
+}
+
+footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-small;
+    text-align: right;
+    padding-right: 1em;
 }
