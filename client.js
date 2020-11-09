@@ -4,6 +4,7 @@ $(document).ready(onReady);
 
 let totalCost = 0; // declared total cost of 0 initially
 let maxMonthly = 20000; // declared a variable for monthly max so this could be adjusted at a later date
+let employeeArray = []; // to store information
 
 function onReady() {
     console.log('in jQuery'); // ensure jQuery is working
@@ -22,6 +23,8 @@ function submitInfo(event) {
         jobName: $('#jobTitle').val(),
         annualSal: $('#annualSalary').val()
     };
+
+    employeeArray.push(employee); // push into the array to store the data
     // conditional to prevent you from adding an employee to the DOM without inputting all of the information
     if (!employee.firstName|| !employee.lastName|| !employee.idNumber || !employee.jobName || !employee.annualSal) { 
         console.log('Please fill out all information');

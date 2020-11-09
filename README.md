@@ -31,9 +31,9 @@ This application is viewed and maniuplated from the browser. No installation is 
 ## Usage
 How does someone use this application? Tell a user story here.
 
-1. Information is inserted into the input boxes - all fields must be filled in order to add the employee to the database.
-2. Press enter or click the 'submit' button to add the employee to the table.
-3. To remove an employee from the database, click the remove button in the row associated with that employee. 
+1. Information is inserted into the input boxes - all fields must be filled in order to add the employee to the list.
+2. Press enter or click the 'submit' button to add the employee to the list of employees.
+3. To remove an employee from the list, click the remove button in the row associated with that employee, their data is removed from the table, but saved globally, which could later be sourced.
 
 ## Built With
 
