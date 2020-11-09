@@ -68,6 +68,9 @@ function removeEmployee() {
 
     let monthlyCost = (deletedSalary / 12); // takes the annual salary and converts it to monthly cost
         totalCost -= monthlyCost; // removes the deleted salary from the totalCost
+        if (totalCost < maxMonthly) { 
+            $('.turnRed').removeClass('red');
+        } // end conditional
     // adjusts the totalCost to display only two digits after decimal
     $('#monthlyCosts').text(`${totalCost.toFixed(2)}`); // displays the adjusted monthly cost on the DOM
 } // end removeEmployee function
