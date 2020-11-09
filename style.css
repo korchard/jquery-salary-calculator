@@ -28,8 +28,6 @@ header {
     margin: 20px;
     padding-top: 10px;
     padding-left: 5px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    box-shadow: 3px black;
 }
 
 p {
@@ -39,9 +37,10 @@ p {
     text-shadow: 1px 1px white;
 }
 
-.input {
+input {
     border: 2px solid black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 3px black;
 }
 
 #submitButton {
