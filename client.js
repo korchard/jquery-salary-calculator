@@ -74,6 +74,9 @@ function removeEmployee() {
         if (totalCost < maxMonthly) { 
             $('.turnRed').removeClass('red');
         } // end conditional
+        if (totalCost < 0) {
+            $('#monthlyCosts').text(`${0}`);
+        } // conditional to prevent a negative sign prior to the $0
     // adjusts the totalCost to display only two digits after decimal
     $('#monthlyCosts').text(`${totalCost.toFixed(2)}`); // displays the adjusted monthly cost on the DOM
 } // end removeEmployee function
