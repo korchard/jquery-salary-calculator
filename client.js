@@ -8,7 +8,7 @@ let maxMonthly = 20000; // declared a variable for monthly max so this could be 
 function onReady() {
     console.log('in jQuery'); // ensure jQuery is working
     $('#submitButton').on('click', submitInfo); // event handler to add info to DOM
-    $('.listOfEmployees').on('click', '.remove', removeEmployee); // removes the specidic employee from the list
+    $('.displayEmployees').on('click', '.remove', removeEmployee); // removes the specidic employee from the list
     $('#monthlyCosts').text(`${0}`) // added this so that $0 shows up on the page refresh
 }
 
@@ -27,7 +27,7 @@ function submitInfo(event) {
         console.log('Please fill out all information');
       } else {
         // append the employee content to the table on the DOM
-        $('.listOfEmployees').append(`<tr class="row" id="deleteInfo">
+        $('.displayEmployees').append(`<tr class="row" id="deleteInfo">
             <th class="column">${employee.firstName}</th>
             <th class="column">${employee.lastName}</th>
             <th class="column">${employee.idNumber}</th>
