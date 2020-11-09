@@ -11,7 +11,7 @@ jQuery Salary Calculator
 
 ## Description
 
-_Duration: Approximately 12 hours
+_Duration: Approximately 13 hours
 
 The application has an input form that collects _employee first name, last name, ID number, job title, annual salary_.
 
