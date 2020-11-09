@@ -21,7 +21,8 @@ There is a 'Remove' button that deletes an employee from the list of employees a
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+![intro](salaryCalculator1.png)
+![intro](salaryCalculator2.png)
 
 ## Installation
 
