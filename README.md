@@ -29,7 +29,6 @@ There is a 'Remove' button that deletes an employee from the list of employees a
 This application is viewed and maniuplated from the browser. No installation is required.
 
 ## Usage
-How does someone use this application? Tell a user story here.
 
 1. Information is inserted into the input boxes - all fields must be filled in order to add the employee to the list.
 2. Press enter or click the 'submit' button to add the employee to the list of employees.
